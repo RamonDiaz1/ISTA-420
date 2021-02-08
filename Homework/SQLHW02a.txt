@@ -1,0 +1,35 @@
+## TSQL Homework 02a
+
+1. List the order of execution of a SQL query.
+	*FROM, WHERE, GROUP BY, HAVING, SELECT, ORDER BY
+	
+2. What does the from clause do?
+	*Specifys the name of the table you want to query.
+	
+3. What does the where clause do?
+	*Specifys a predicate or logical expression to filter the rows returned by the FROM phase.
+	
+4. What does the group by clause do?
+	*Arranges the rows returned by the previous logical query processing phase in groups. 
+	
+5. What does the having clause do?
+	*Filter groups, only groups for which the HAVING predicate evaluates to TRUE are returned by the 
+	 HAVING phase to the next logical query processing phase.
+	
+6. What does the select clause do?
+	*Specify the attributes (columns) you want to return in the result table of the query.
+	
+7. What does the distinct keyword do?
+	*Handles distinct occurrences of known values. duplicates rows.
+	
+8. What does the order by clause do?
+	*Sorts the rows in the output for presentation purposes.
+
+9. What does the limit clause do? This is not in the book.
+	*Sets an upper limit on the number of tuples returned by SQL.
+
+10. What does the top clause do?
+	*Limits the number of records we return in a SQL Statement.
+
+11. What do the offset . . . fetch . . . clauses do?
+	*Provides a means to retrieve a range of records.

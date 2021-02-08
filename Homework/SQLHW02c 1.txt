@@ -1,0 +1,57 @@
+TSQL Homework 02c
+
+1. List the date/time types in T-SQL.
+DATETIME 
+SMALLDATETIME 
+DATE 
+TIME 
+DATETIME2 
+nanoseconds
+##DATETIMEOFFSET
+
+2.How do you express a date/time literal in T-SQL?
+* You use a string literal
+
+3.What is the setting DATEFORMAT used for?
+* Determines how SQL Server interprets the literals you enter when they are converted from a character-string type to a date and time type.
+
+4. Write a T-SQL snippet changing the date format to German. Read the documentation on how to do
+this.
+```
+SET LANGUAGE german;
+SELECT CAST('02/12/2016' AS DATE);
+```
+
+5.What is the difference between CAST(), CONVERT(), and PARSE()?
+* Casting is when you take a variable of one type and change it to a different type. 
+converting is when you take a value from one type and convert it to a different type
+Parsing is taking a string and converting it to a different type by understanding its content.
+
+6.What function returns the current date? This is very useful in a table that maintains a log of events,
+such as user logins.
+* You use CURRENTTIME
+
+7.How do you add one day to the current date? Add one week? Add one month? Add one year?
+* Use the DATEADD() function
+
+
+8.Write a SQL snippet to return the number of years between your birth date and today’s date.
+* SELECT DATEDIFF(day, '20210124', '19960924');
+
+9.How do you check a string literal to see if it represents a valid date?
+* You use the ISDATE function
+
+10.What does EOMONTH() do? Give an example of why this might be very useful.
+* The EOMONTH function accepts an input date and time value and returns the respective end-ofmonth date as a DATE typed value. 
+SELECT orderid, orderdate, custid, empid
+FROM Sales.Orders
+WHERE orderdate = EOMONTH(orderdate);
+
+11.Payments are due exactly 30 days from the date of the last function. Write a select query that calculates
+the date of the next payment. Pretend we want to update a column in a database that contains the
+date of the next payment. We will do this when we write UPDATE queries.
+FROM PAYMENTS SELECT CAST'DATEADD'
+
+12. Suppose your son or daughter wants to run a query every day that tells them the number of days until
+their 16th birthday. Write a select query that does this.
+USE DATEDIFF

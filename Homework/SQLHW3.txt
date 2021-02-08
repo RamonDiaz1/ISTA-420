@@ -1,0 +1,51 @@
+##TSQL Homework 03
+
+1.In general, why would you even want to join two (or more) tables together? This is a good time to
+think about the nature of relational algebra.
+* It allow users reference to two tables.
+
+2.Describe in your own words the output from an inner join.
+* The inner join output matches two querys.
+
+3.Describe in your own words the output from an outer join.
+* rows from two tables are matched.
+
+4.Describe in your own words the output from an cross join.
+* the output shows a combination from two tables.
+
+5.A convenient mnemonic for remembering the various joins is “Ohio.” Why is this true?
+
+
+6.Give an example of a composite join.
+* A composite join, is a join where you need to match multiple attributes from each side.
+FROM dbo.Table1 AS T1
+ INNER JOIN dbo.Table2 AS T2
+ ON T1.col1 = T2.col1
+ AND T1.col2 = T2.col2
+
+7.What is the difference between the following two queries? The business problem is “How many orders
+do we have from each customer?
+* In the first query you are selecting all number orders, while in the second you are selecting the order id.
+```
+================first query===============
+SELECT C.custid, COUNT(*) AS numorders
+FROM Sales.Customers AS C
+LEFT OUTER JOIN Sales.Orders AS O
+ON C.custid = O.custid
+GROUP BY C.custid;
+================second query===============
+SELECT C.custid, COUNT(O.orderid) AS numorders
+FROM Sales.Customers AS C
+LEFT OUTER JOIN Sales.Orders AS O
+ON C.custid = O.custid
+GROUP BY C.custid;
+```
+8.What might be one reason the following query does not return the column custID in this query?
+* you are selecting customerid from another table.
+```
+SELECT C.custid, C.companyname, O.orderid, O.orderdate
+FROM Sales.Customers AS C
+LEFT OUTER JOIN Sales.Orders AS O
+ON C.custid = O.custid
+WHERE O.orderdate >= ’20160101’;
+```

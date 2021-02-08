@@ -1,0 +1,49 @@
+## C# Homework 07
+
+.What is a class? According to the book, what does a class "arrange?"
+* A class is a type Class is the root word of the term classification. A class defines the kinds of data and the functionality their objects will
+ have. arranges variables and method.
+
+2.What are the two purposes of encapsulation?
+* The two purposes of encapsulation are to combine methods and data within a class; in other words, to support classification and to control 
+the accessibility of the methods and data; in other words, to control the use of the class.
+
+3.How do you instantiate an instance of a class? How do you access that instance?
+* Use the new keyword. you access it by calling it.
+
+4.What is the default access of the fields and methods of a class? How do you change the default?
+* Private, you can explicitly state if the methods are public or private
+
+5.What is the syntax for writing a constructor?
+* Just add a public method that does not return a value and give it the same name as the class. 
+Does not have a return type, and have the same name as the class.
+
+6.What is the difference between class fields and methods, and instance fields and methods? How do you create class fields and methods?
+
+* Methods that belong to a class and that operate on the data belonging to a particular instance of a class are called instance methods. 
+Class fields and methods are written within the class itself and are scoped locally to that class. Instances are objects written in another
+ part of code apart from the originating class and are called so their fields and methods may be used.
+
+7.How do you bring a static class in scope? Why would you want to bring a static class in scope?
+* using statements. It is useful to do this for utility methods such as those found within the Math class.
+
+8.Can you think of a good reason to create an anonymous class? What is it?
+* As a way to encapsulate a set of read-only properties into a single object without having to explicitly define a type first.
+
+9.What is polymorphism as this term is used in computer science? This is not in the book.
+* Polymorphism is the ability of an object to take on many forms.
+
+10.What is message passing as this term is used in computer science? This is not in the book.
+in computer science, message passing is a technique for invoking behavior. its how oop operate.
+
+11. What was the first object oriented programming language?
+* Simula is the first OOP.
+
+12. Consider this quote by Alexander Stepanov:
+I find OOP technically unsound. It attempts to decompose the world in terms of interfaces that vary on a single type. To deal with the real 
+problems you need multisorted algerbras - families of interfaces that span multiple types. I find OOP philosophically unsound. It claims that 
+everything is an object. Even if it is true it is not very interesting - saying that everything is an object is saying nothing at all.
+
+Who is Alexander Stephanov? What do you think about this quote?
+Alexander Alexandrovich Stepanov is a Russian computer programmer.
+ 

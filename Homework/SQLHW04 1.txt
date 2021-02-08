@@ -1,0 +1,41 @@
+## TSQL Chapter 4 Homework
+
+1.In your own words what is a subquery?
+* A subquery is query within a query.
+
+2.in your own words what is a self contained subquery?
+* A self contained subquery has no dependency on tables from the outer query, which it can run by itself.
+
+3.In your own words which is a correlated subquery?
+* A correlated subquery is dependent on the tables from the outer query.
+
+
+4.Give an example of a subquery that returns a single value. When would you use this kind of subquery?
+* A query that requires a specific table value to run could utilize a subquery pointing to that value. 
+```
+select avg(orderid) from Sales.Orders;
+```
+
+5.Give an example of a subquery that returns multiple values. When would you use this kind of subquery?
+* The IN predicate is an example of a subquery that returns multiple values. You might use this kind of query to determine every order that was placed from a certain location.
+
+```
+select distinct shipcountry from sales.oreders;
+```
+
+6.Give an example of a subquery that returns table values. When would you use this kind of subquery?
+ * This subquery is used to return more than one column or rows worth of value.
+
+7.What does the exists predicate do? Give an example.
+* The exists predicate accepts a subquery as input and returns true if the subquery returns any rows and false otherwise.
+
+8.What happens if we use the NOT operator before a predicate? Give an example.
+* If you use the NOT operator before the IN predicate any values in that set returns NULL the operation will return an empty set.
+
+9.When you use EXISTS or NOT EXISTS with respect to a row in a database, does it return two or three values? Explain your answer.
+* The EXIST predicate only uses two value logic, either true or false.
+
+10.How would you create a subquery to calculate aggregates? For example, you want to calculate yearly sales of a product, and you also want to keep a running sum of total sales. Explain how you would use a subquery to do this.
+* You query one instance of the view (call it 01) to return for each year the current year and quantity. 
+You use a correlated subquery against a second instance of the view (call it 02) to calculate the running total quantity. 
+The subquery should filter all rows in 02 where the order year is smaller than or equal to the current year in 01, and sum the quantities from 02.

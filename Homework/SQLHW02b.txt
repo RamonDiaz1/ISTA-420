@@ -1,0 +1,49 @@
+## TSQL Homework 02b
+
+1.What is a data type? Why do we have data types?
+* a classification that specifies which type of value a variable has and what type of mathematical, relational or logical 
+operations can be applied to it without causing an error. A data type constrains the values that an expression, such as 
+a variable or a function, might take.
+
+2.What is a collation? Name four elements of a collation.
+* Collation is a property of character data that encapsulates several aspects: language support, sort
+order, case sensitivity, accent sensitivity, and more.  
+
+3.How would you strip whitespace from a string? For example, suppose you had “ Dave ” but
+wanted only “Dave”.
+* Use the The RTRIM and LTRIM functions
+
+4.Suppose you wanted to make a list of every college and university that was called an Institute from
+the college table. Write the query.
+*Select * From college where college_name like '%institure%';
+
+5.How would you find the number of the index of the first space in a string? For example, the index of
+the first space in “Barack Hussein Obama” would be 7.
+*Use the instr() method
+
+6.How would you select just the first name in a list of the presidents. Each record looks like the: ”George
+Washington”, ”John Adams”, ”Thomas Jefferson”. First names can be an arbitrary length, from “Cal”
+to “Benjamin.” (e.g., Cal College, Benjamin Harrison)
+*use the SUBSTRING() method
+
+7.What is the order of precedence for the logical operators?
+* * NOT
+* AND
+* BETWEEN, IN, LIKE, OR
+
+8.What is the order of precedence for the math operators?
+* ( ) (Parentheses)
+* *(Multiplication), / (Division), % (Modulo)
+* +(Positive), – (Negative), + (Addition), + (Concatenation), – (Subtraction)
+
+9.What is the difference between a simple and a searched CASE expression?;
+*You use the simple form to compare one value or scalar expression with a list of possible values and return
+a value for the first match. A searched CASE returns the value in the THEN clause that is associated with
+the first WHEN predicate that evaluates to TRUE.
+
+10.How would you turn a list of names like this: “LASTNAME, FIRSTNAME”, to a list like this:
+“FIRSTNAME LASTNAME”?
+*select substring('LASTNAME, FIRSTNAME', instr('LASTNAME, FIRSTNAME', ' ')+1) || ' ' || substring('LASTNAME, FIRSTNAME', 1, instr('LASTNAME, FIRSTNAME', ', '));
+
+11.How would you turn a list of names like this: “FIRSTNAME LASTNAME”, to a list like this: “LASTNAME, FIRSTNAME”?
+*select substring('FIRSTNAME, LASTNAME', instr('FIRSTNAME, LASTNAME', ' ')+1) || ' ' || substring('FIRSTNAME, LASTNAME', 1, instr('FIRSTNAME, LASTNAME', ', '));
